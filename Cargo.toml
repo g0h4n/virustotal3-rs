@@ -1,6 +1,6 @@
 [package]
 name = "virustotal3"
-version = "3.0.1"
+version = "3.0.2"
 authors = ["g0h4n <g0h4n_0@protonmail.com>","Chihiro Hasegawa <encry1024@gmail.com>"]
 keywords = ["rust", "tokyo", "virustotal", "api", "v3"]
 description = "The library for VirusTotal Public API 3.0"
