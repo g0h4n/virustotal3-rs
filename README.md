@@ -31,8 +31,7 @@ Library for virustotal API [version 3](https://developers.virustotal.com/referen
 ## Example
 
 ```rust
-extern crate virustotal3;
-use virustotal3::*;
+use virustotal3::VtClient;
 
 #[tokio::main]
 async fn main() {
