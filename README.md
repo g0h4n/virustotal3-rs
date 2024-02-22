@@ -30,6 +30,16 @@ Library for virustotal API [version 3](https://developers.virustotal.com/referen
 
 ## Example
 
+**Cargo.toml**:
+```rust
+...
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+virustotal3 = { version = "3.0.2" }
+```
+
+**main.rs**:
+
 ```rust
 use virustotal3::VtClient;
 
@@ -38,8 +48,12 @@ async fn main() {
     let api = "Your API KEY";
     let url = "The URL you want to check";
     let vt = VtClient::new(api);
-    let res = vt.scan_url(&url).await;
-    println!("{:?}", &res.data);
+    match vt.scan_url(&url).await {
+        Ok(res) => {
+            println!("{:?}", &res.data);
+         },
+        Err(err) => { println!("[Error] {err}") }
+    }   
 }
 ```
 
