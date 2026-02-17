@@ -21,7 +21,7 @@ impl<'a> VtClient<'a> {
         let resp = Client::new()
             .post(&url)
             .header("x-apikey", self.api_key)
-            .form(&[("url", target_url)])
+            .body(format!("url={}", target_url))
             .send()
             .await
             .context("Error! Probably maximum request limit achieved!")?;
